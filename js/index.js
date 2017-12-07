@@ -35,7 +35,7 @@ function createDialog() {
 	navigator.notification.confirm(
     	'Are you hungry?',  // message
         dialogDismissed,         // callback
-        'An example dialog!',            // title
+        'Hunger, do you possess such a need?',            // title
         ['Yes', 'No']                  // buttons
     );
 
@@ -46,6 +46,7 @@ function createDialog() {
 function dialogDismissed(buttonIndex) {
 	
 	if(buttonIndex==1) new Toast({content: "Then go get some food you numpty", duration: 3000});
+    createNotification();
    	else if(buttonIndex==2) new Toast({content: 'Then carry on', duration: 3000});
 
 }
@@ -58,7 +59,7 @@ function createNotification() {
     //generate a time to post notification
     //
     var currentTime = new Date().getTime(); //current time
-    var notificationTime = new Date(currentTime + 1000); //delayed time  - add 1 second
+    var notificationTime = new Date(currentTime + 30000); //delayed time  - add 1 second
     			
     //
     //setup notification
@@ -66,8 +67,8 @@ function createNotification() {
     
     cordova.plugins.notification.local.schedule({ 
     	id: 		1,
-        title: 		"Hey you",
-        message: 	"This is an example notification",
+        title: 		"Hey, listen",
+        message: 	"Get back to work you slacker",
         date: 		notificationTime, 
         badge: 		notification_count++
    	});
