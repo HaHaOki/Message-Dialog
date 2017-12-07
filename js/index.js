@@ -45,8 +45,9 @@ function createDialog() {
         	
 function dialogDismissed(buttonIndex) {
 	
-	if(buttonIndex==1) new Toast({content: "Then go get some food you numpty", duration: 3000});
+	if(buttonIndex==1) { new Toast({content: "Then go get some food you numpty", duration: 3000});
     createNotification();
+    }
    	else if(buttonIndex==2) new Toast({content: 'Then carry on', duration: 3000});
 
 }
